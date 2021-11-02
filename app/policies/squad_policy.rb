@@ -1,7 +1,9 @@
 class SquadPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      user.squads
     end
   end
+
+
 end
