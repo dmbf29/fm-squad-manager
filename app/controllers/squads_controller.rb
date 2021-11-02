@@ -18,6 +18,7 @@ class SquadsController < ApplicationController
 
   def create
     @squad = Squad.new(squad_params)
+    @squad.user = current_user
     authorize @squad
     if @squad.save
       redirect_to @squad, notice: 'Squad was successfully created.'
